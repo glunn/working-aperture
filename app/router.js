@@ -7,6 +7,8 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('what-sets-us-apart');
+  this.route('order-options');
 });
 
 export default Router;
