@@ -9,6 +9,7 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('what-sets-us-apart');
   this.route('order-options');
+  this.route('recent-works');
 });
 
 export default Router;
