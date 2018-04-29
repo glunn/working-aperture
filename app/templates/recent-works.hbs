@@ -5,5 +5,8 @@
   <p>
     Some pictures
   </p>
+  {{#each model as |picture|}}
+  <h2>{{picture.title}}</h2>
+  {{/each}}
 </div>
 {{outlet}}
