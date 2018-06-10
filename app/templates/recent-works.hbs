@@ -5,8 +5,23 @@
   <p>
     Some pictures
   </p>
-  {{#each model as |picture|}}
-  <h2>{{picture.title}}</h2>
+
+
+<div class="container">
+  <div class="row">
+
+  {{#each model as |project|}}
+    <div class="col-sm">
+      <h2>{{project.title}}</h2>
+      <img
+        alt="Working Aperture Logo"
+        class="img-fluid"
+        src={{project.photo}}>
+    </div>
   {{/each}}
+
+  </div>
+</div>
+
 </div>
 {{outlet}}
