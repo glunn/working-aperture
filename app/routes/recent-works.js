@@ -21,12 +21,19 @@ export default Route.extend({
       title: 'Widget',
       company: 'Coner',
       category: 'products',
-      photo: '/img/bottle-background.jpg'
+      photo: '/img/bottle-on-white.jpg'
     },
     {
       id: 'screw',
       title: 'Screw',
       company: 'Taned',
+      category: 'products',
+      photo: '/img/bottle-on-white.jpg'
+    },
+    {
+      id: 'widget-2',
+      title: 'Another Widget',
+      company: 'Something',
       category: 'products',
       photo: '/img/bottle-background.jpg'
     }]

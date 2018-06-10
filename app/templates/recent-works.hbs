@@ -7,13 +7,28 @@
   </p>
 
 
+
 <div class="container">
   <div class="row">
 
   {{#each model as |project|}}
-    <div class="col-sm">
+    {{#if isShowingModal}}
+      {{#modal-dialog onClose="toggleModal"
+                      targetAttachment="center"
+                      translucentOverlay=true}}
+        Oh hai there!
+        <img
+          onClick={{action "toggleModal"}}
+          alt="Working Aperture Logo"
+          class="img-fluid"
+          src={{project.photo}}>
+      {{/modal-dialog}}
+    {{/if}}
+
+    <div class="col-sm-3">
       <h2>{{project.title}}</h2>
       <img
+        onClick={{action "toggleModal"}}
         alt="Working Aperture Logo"
         class="img-fluid"
         src={{project.photo}}>
