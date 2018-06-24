@@ -1,7 +1,22 @@
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
+
 .navbar a {
   color: black;
+  border: 5px solid yellow;
+  display: inline-block;
+  vertical-align: middle;
 }
 
-.navbar {
-    border: 5px solid red;
+.navbar img {
+  width: 38px;
+}
+
+.navbar, .links {
+  text-align: center;
+  border: 5px solid red;
+}
+
+.img-modal {
+  max-height: 90vh;
 }
