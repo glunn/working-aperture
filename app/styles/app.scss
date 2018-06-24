@@ -3,13 +3,13 @@
 
 .navbar a {
   color: black;
+  border: 5px solid yellow;
+  display: inline-block;
+  vertical-align: middle;
 }
 
-.logo {
-  text-align: right;
-}
 .navbar img {
-  width: 50px;
+  width: 38px;
 }
 
 .navbar, .links {

@@ -1,29 +1,40 @@
 <div class="container">
-  <div class="navbar row">
-    <div class="col logo">
-      {{#link-to "index"}}
-        <img
-        alt="Working Aperture Logo"
-        src="/img/working-aperture.png">
-        Working Aperture
-      {{/link-to}}
+  <div class="navbar row justify-content-end">
+    <div class="col col-lg">
+      <div class="row justify-content-end">
+        <div class="col col-lg-auto">
+        <span>
+          {{#link-to "index"}}
+            <img
+            alt="Working Aperture Logo"
+            src="/img/working-aperture.png">
+          {{/link-to}}
+        </span>
+        <span>
+          {{#link-to "index" class="button"}}
+            Working<br>
+            Aperture
+          {{/link-to}}
+        </span>
+      </div>
+      </div>
     </div>
     <div class="col col-lg-auto">
       {{#link-to "what-sets-us-apart" class="button"}}
-        What sets
-        <br>us apart
+        What sets<br>
+        us apart
       {{/link-to}}
     </div>
-    <div class="col col-lg-2 col-lg-auto">
+    <div class="col col-lg-auto">
       {{#link-to "order-options" class="button"}}
-        Order
-        <br>Options
+        Order<br>
+        Options
       {{/link-to}}
     </div>
     <div class="col col-lg-auto">
       {{#link-to "recent-works" class="button"}}
-        Recent
-        <br>Works
+        Recent<br>
+        Works
       {{/link-to}}
     </div>
   </div>
