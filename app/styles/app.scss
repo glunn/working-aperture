@@ -30,8 +30,14 @@
 }
 
 .add-top {
-  padding-top: 15%;
+  @media (max-width: 767px){
+    margin-top: 50px;
   }
+}
+.add-extra-top {
+  padding-top: 15%;
+  padding-bottom: 25%;
+}
 
 .navbar-toggler-icon {
     margin-top: 15px;
