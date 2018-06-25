@@ -1,21 +1,39 @@
 @import "ember-modal-dialog/ember-modal-structure";
 @import "ember-modal-dialog/ember-modal-appearance";
 
-.navbar a {
-  color: black;
-  border: 5px solid yellow;
-  display: inline-block;
-  vertical-align: middle;
+.navbar {
+  background-color: #ffffff;
+  a {
+    color: gray;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+  }
+  a.active, a:hover {
+    text-decoration: none;
+    color: black;
+  }
+  img {
+    width: 38px;
+  }
+  .nav-link {
+    margin-right: 50px;
+  }
 }
 
-.navbar img {
-  width: 38px;
-}
+.navbar-toggler-icon {
+    margin-top: 15px;
+    font-size: 35px;
+  }
 
-.navbar, .links {
-  text-align: center;
-  border: 5px solid red;
+.body {
+  margin-top: 150px;
+  background-color: #F8F9FA;
 }
+// .navbar, .links {
+//   text-align: center;
+//   // border: 5px solid red;
+// }
 
 .img-modal {
   max-height: 90vh;
