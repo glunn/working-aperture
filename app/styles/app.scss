@@ -2,8 +2,12 @@
 @import "ember-modal-dialog/ember-modal-appearance";
 
 .navbar {
+  padding-top: 15px;
+  font-family: courier;
+  z-index: 49;
   background-color: #ffffff;
   a {
+    line-height: 1;
     color: gray;
     display: inline-block;
     vertical-align: middle;
@@ -14,11 +18,15 @@
     color: black;
   }
   img {
-    width: 38px;
+    width: 35px;
   }
   .nav-link {
     margin-right: 50px;
   }
+}
+
+.img-modal {
+  max-height: 80vh;
 }
 
 .navbar-toggler-icon {
@@ -27,14 +35,6 @@
   }
 
 .body {
+  font-family: courier;
   margin-top: 150px;
-  background-color: #F8F9FA;
-}
-// .navbar, .links {
-//   text-align: center;
-//   // border: 5px solid red;
-// }
-
-.img-modal {
-  max-height: 90vh;
 }
