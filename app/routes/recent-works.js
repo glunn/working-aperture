@@ -42,21 +42,21 @@ export default Route.extend({
       title: 'Screw',
       company: 'Taned',
       category: 'products',
-      photo: '/img/bottle-on-white.jpg'
+      photo: '/img/Inflatable-portable-lounger-sm.jpg'
     },
-    // {
-    //   id: 'screw',
-    //   title: 'Screw',
-    //   company: 'Taned',
-    //   category: 'products',
-    //   photo: '/img/braided-bendable-cable.gif'
-    // },
+    {
+      id: 'screw',
+      title: 'Screw',
+      company: 'Taned',
+      category: 'products',
+      photo: '/img/ritualist-banner.jpg'
+    },
     {
       id: 'widget-2',
       title: 'Another Widget',
       company: 'Something',
       category: 'products',
-      photo: '/img/bottle-background.jpg'
+      photo: '/img/Shakshuka-display-md.jpg'
     }]
   }
 });
