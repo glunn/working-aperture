@@ -26,7 +26,7 @@
 }
 
 .img-modal {
-  max-height: 80vh;
+  max-height: 95vh;
 }
 
 .add-top {
@@ -48,8 +48,13 @@
   font-family: courier;
 }
 
-
-
+/*
+ * The modal close button
+ */
+.close {
+  font-size: 42px;
+  line-height: .5;
+}
 
 
 
