@@ -11,6 +11,10 @@
 {{#modal-dialog onClose="toggleModal"
                 targetAttachment="center"
                 translucentOverlay=true}}
+
+  <button type="button" class="close" aria-label="Close" {{action "toggleModal"}}>
+    <span aria-hidden="true">&times;</span>
+  </button>
   <p>{{project.company}}</p>
   <p>{{project.title}}</p>
   <img
