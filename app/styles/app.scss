@@ -2,7 +2,7 @@
 @import "ember-modal-dialog/ember-modal-appearance";
 
 .navbar {
-  padding-top: 15px;
+  padding: 0;
   font-family: courier;
   z-index: 49;
   background-color: #ffffff;
@@ -20,10 +20,14 @@
   img {
     width: 35px;
   }
+  ul {
+    padding: 15px 15px 8px 15px;
+  }
   .nav-link {
     margin-right: 50px;
   }
 }
+
 
 .img-modal {
   max-height: 95vh;
@@ -41,6 +45,7 @@
 
 .navbar-toggler-icon {
     margin-top: 15px;
+    margin-bottom: -5px;
     font-size: 35px;
   }
 
