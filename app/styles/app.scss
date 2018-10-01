@@ -9,15 +9,16 @@
   a {
     line-height: 1;
     color: gray;
-    display: inline-block;
-    vertical-align: middle;
-    text-align: center;
+    display: block;
+    vertical-align: left;
+    text-align: left;
   }
   a.active, a:hover {
     text-decoration: none;
     color: black;
   }
   img {
+    margin-left: 6px;
     width: 35px;
   }
   ul {
@@ -25,6 +26,9 @@
   }
   .nav-link {
     margin-right: 50px;
+  }
+  .col-xs-1 {
+    margin-left: 6px;
   }
 }
 
