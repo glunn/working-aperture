@@ -6,7 +6,12 @@
   font-family: courier;
   z-index: 49;
   background-color: #ffffff;
+  .show {
+    // .navbar-nav {
+      height: 100%;
+  }
   a {
+    height: 100%;
     line-height: 1;
     color: gray;
     display: block;
@@ -21,14 +26,25 @@
     margin-left: 6px;
     width: 35px;
   }
-  ul {
-    padding: 15px 15px 8px 15px;
+  @media (max-width: 767px) {
+    li {
+      height: 80px;
+    }
+    a {
+      padding-left: 30px;
+      padding-top: 10px;
+    }
   }
-  .nav-link {
-    margin-right: 50px;
-  }
-  .col-xs-1 {
-    margin-left: 6px;
+  @media (min-width: 768px) {
+    ul {
+      padding: 15px 15px 8px 15px;
+    }
+    .nav-link {
+      margin-right: 50px;
+    }
+    .col-xs-1 {
+      margin-left: 6px;
+    }
   }
 }
 

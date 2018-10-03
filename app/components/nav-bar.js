@@ -1,14 +1,10 @@
 import Component from '@ember/component';
+import $ from 'jquery';
 
 export default Component.extend ({
   actions: {
     closeNavbar: function() {
-    //  this.toggleProperty('isShowingNavbar');
-      $('.collapse').collapse('hide');
-      // alert('DoubleClickableComponent was clicked!');
+      this.$('.collapse').collapse('hide');
     }
   }
-  //   // focusOut() {
-  //   // alert('DoubleClickableComponent was clicked!');
-  // }
 });
