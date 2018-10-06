@@ -1,3 +1,4 @@
+@import "partials/variables";
 @import "ember-modal-dialog/ember-modal-structure";
 @import "ember-modal-dialog/ember-modal-appearance";
 
@@ -26,7 +27,7 @@
     margin-left: 6px;
     width: 35px;
   }
-  @media (max-width: 767px) {
+  @media (max-width: $screen-sm-min) {
     li {
       height: 80px;
     }
@@ -35,7 +36,7 @@
       padding-top: 10px;
     }
   }
-  @media (min-width: 768px) {
+  @media (min-width: $screen-sm) {
     ul {
       padding: 15px 15px 8px 15px;
     }
