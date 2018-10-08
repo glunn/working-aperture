@@ -2,14 +2,16 @@
 @import "ember-modal-dialog/ember-modal-structure";
 @import "ember-modal-dialog/ember-modal-appearance";
 
+.body { font-family: courier; }
+.overflow-hidden { overflow: hidden; }
+
 .navbar {
   padding: 0;
   font-family: courier;
   z-index: 49;
   background-color: #ffffff;
   .show {
-    // .navbar-nav {
-      height: 100%;
+    height: 100%;
   }
   a {
     height: 100%;
@@ -27,7 +29,7 @@
     margin-left: 6px;
     width: 35px;
   }
-  @media (max-width: $screen-sm-min) {
+  @media(max-width: $screen-sm-min) {
     li {
       height: 80px;
     }
@@ -36,7 +38,7 @@
       padding-top: 10px;
     }
   }
-  @media (min-width: $screen-sm) {
+  @media(min-width: $screen-sm) {
     ul {
       padding: 15px 15px 8px 15px;
     }
@@ -48,11 +50,29 @@
     }
   }
 }
-
-
-.img-modal {
-  max-height: 95vh;
+.navbar-toggler-icon {
+  margin-top: 15px;
+  margin-bottom: -5px;
+  font-size: 35px;
 }
+
+.ember-modal-dialog {
+  overflow: scroll;
+  text-align: center;
+  
+  @media(max-width: $screen-sm-max) {
+    height: 96%;
+    width: 90%;
+    .img-fluid {
+      max-width:90%;
+      max-height:90%;
+    }
+  }
+  @media(min-width: $screen-md-min) {
+      max-height: 90vh;
+  }
+}
+
 
 .add-top {
   @media (max-width: 767px){
@@ -64,15 +84,7 @@
   padding-bottom: 25%;
 }
 
-.navbar-toggler-icon {
-    margin-top: 15px;
-    margin-bottom: -5px;
-    font-size: 35px;
-  }
 
-.body {
-  font-family: courier;
-}
 
 /*
  * The modal close button
@@ -82,11 +94,6 @@
   line-height: .5;
 }
 
-
-
-// .container {
-//   max-width: 960px;
-// }
 
 /*
  * Dummy devices (replace them with your own or something else entirely!)
@@ -127,5 +134,3 @@
     flex: 1;
   }
 }
-
-.overflow-hidden { overflow: hidden; }

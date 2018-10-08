@@ -11,12 +11,17 @@
 {{#modal-dialog onClose="toggleModal"
                 targetAttachment="center"
                 translucentOverlay=true}}
-
-  <button type="button" class="close" aria-label="Close" {{action "toggleModal"}}>
-    <span aria-hidden="true">&times;</span>
-  </button>
-  <p>{{project.company}}</p>
-  <p>{{project.title}}</p>
+  <div class="row">
+    <div class="col-11">
+      <p>{{project.company}}</p>
+      <p>{{project.title}}</p>
+    </div>
+    <div class="col-1">
+      <button type="button" class="close" aria-label="Close" {{action "toggleModal"}}>
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>
   <img
     alt="Working Aperture Logo"
     class="img-fluid img-modal"
