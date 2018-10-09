@@ -2,64 +2,15 @@
 @import "ember-modal-dialog/ember-modal-structure";
 @import "ember-modal-dialog/ember-modal-appearance";
 
+@import 'app/components/nav-bar/stylesheet';
+
 .body { font-family: courier new; }
 .overflow-hidden { overflow: hidden; }
-
-.navbar {
-  padding: 0;
-  font-family: courier;
-  z-index: 49;
-  background-color: #ffffff;
-  .show {
-    height: 100%;
-  }
-  a {
-    height: 100%;
-    line-height: 1;
-    color: gray;
-    display: block;
-    vertical-align: left;
-    text-align: left;
-  }
-  a.active, a:hover {
-    text-decoration: none;
-    color: black;
-  }
-  img {
-    margin-left: 6px;
-    width: 35px;
-  }
-  @media(max-width: $screen-sm-min) {
-    li {
-      height: 80px;
-    }
-    a {
-      padding-left: 30px;
-      padding-top: 10px;
-    }
-  }
-  @media(min-width: $screen-sm) {
-    ul {
-      padding: 15px 15px 8px 15px;
-    }
-    .nav-link {
-      margin-right: 50px;
-    }
-    .col-xs-1 {
-      margin-left: 6px;
-    }
-  }
-}
-.navbar-toggler-icon {
-  margin-top: 15px;
-  margin-bottom: -5px;
-  font-size: 35px;
-}
 
 .ember-modal-dialog {
   overflow: scroll;
   text-align: center;
-  
+    
   @media(max-width: $screen-sm-max) {
     height: 96%;
     width: 90%;
@@ -73,7 +24,6 @@
   }
 }
 
-
 .add-top {
   @media (max-width: 767px){
     margin-top: 50px;
@@ -84,6 +34,11 @@
   padding-bottom: 25%;
 }
 
+.recent-works {
+  .col-sm-3 {
+    padding: 30px;
+  }
+}
 
 
 /*
@@ -137,9 +92,9 @@
 
 
 
-
-
-
+/*
+ * What sets us apart (the dots)
+ */
 section {
   h2.section-heading {
     font-size: 30px;
