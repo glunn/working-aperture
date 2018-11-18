@@ -7,8 +7,10 @@
         Order Pictures. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur.
       </p>
       <ul>
-        {{#each drafts key="id" as |draft|}}
-          <li>{{draft.title}}</li>
+        test
+        {{model.email}}
+        {{#each model as |user|}}
+          <li>{{user.email}}</li>
         {{/each}}
       </ul>
     </div>
