@@ -6,6 +6,13 @@
       <p class="section-subheading text-muted">
         Order Pictures. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur.
       </p>
+      <ul>
+        test
+        {{model.email}}
+        {{#each model as |user|}}
+          <li>{{user.email}}</li>
+        {{/each}}
+      </ul>
     </div>
   </div>
   {{outlet}}

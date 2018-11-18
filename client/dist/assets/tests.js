@@ -5,6 +5,11 @@ define('working-aperture/tests/app.lint-test', [], function () {
 
   QUnit.module('ESLint | app');
 
+  QUnit.test('adapters/user.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'adapters/user.js should pass ESLint\n\n');
+  });
+
   QUnit.test('app.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'app.js should pass ESLint\n\n');
@@ -25,9 +30,19 @@ define('working-aperture/tests/app.lint-test', [], function () {
     assert.ok(true, 'components/site-footer/component.js should pass ESLint\n\n');
   });
 
+  QUnit.test('controllers/order-options.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/order-options.js should pass ESLint\n\n');
+  });
+
   QUnit.test('controllers/recent-works.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'controllers/recent-works.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('models/user.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'models/user.js should pass ESLint\n\n');
   });
 
   QUnit.test('resolver.js', function (assert) {
@@ -255,9 +270,24 @@ define('working-aperture/tests/tests.lint-test', [], function () {
     assert.ok(true, 'test-helper.js should pass ESLint\n\n');
   });
 
+  QUnit.test('unit/adapters/user-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/adapters/user-test.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('unit/controllers/order-options-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/controllers/order-options-test.js should pass ESLint\n\n');
+  });
+
   QUnit.test('unit/controllers/recent-works-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/controllers/recent-works-test.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('unit/models/user-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/models/user-test.js should pass ESLint\n\n');
   });
 
   QUnit.test('unit/routes/index-test.js', function (assert) {
@@ -280,6 +310,34 @@ define('working-aperture/tests/tests.lint-test', [], function () {
     assert.ok(true, 'unit/routes/what-sets-us-apart-test.js should pass ESLint\n\n');
   });
 });
+define('working-aperture/tests/unit/adapters/user-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleFor)('adapter:user', 'Unit | Adapter | user', {
+    // Specify the other units that are required for this test.
+    // needs: ['serializer:foo']
+  });
+
+  // Replace this with your real tests.
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var adapter = this.subject();
+    assert.ok(adapter);
+  });
+});
+define('working-aperture/tests/unit/controllers/order-options-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleFor)('controller:order-options', 'Unit | Controller | order options', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  // Replace this with your real tests.
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var controller = this.subject();
+    assert.ok(controller);
+  });
+});
 define('working-aperture/tests/unit/controllers/recent-works-test', ['ember-qunit'], function (_emberQunit) {
   'use strict';
 
@@ -292,6 +350,20 @@ define('working-aperture/tests/unit/controllers/recent-works-test', ['ember-quni
   (0, _emberQunit.test)('it exists', function (assert) {
     var controller = this.subject();
     assert.ok(controller);
+  });
+});
+define('working-aperture/tests/unit/models/user-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleForModel)('user', 'Unit | Model | user', {
+    // Specify the other units that are required for this test.
+    needs: []
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var model = this.subject();
+    // let store = this.store();
+    assert.ok(!!model);
   });
 });
 define('working-aperture/tests/unit/routes/index-test', ['ember-qunit'], function (_emberQunit) {

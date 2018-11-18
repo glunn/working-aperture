@@ -2,6 +2,16 @@
 
 
 
+define('working-aperture/adapters/user', ['exports', 'ember-data'], function (exports, _emberData) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = _emberData.default.RESTAdapter.extend({
+    host: 'https://secure-plains-60928.herokuapp.com'
+  });
+});
 define('working-aperture/app', ['exports', 'working-aperture/resolver', 'ember-load-initializers', 'working-aperture/config/environment'], function (exports, _resolver, _emberLoadInitializers, _environment) {
   'use strict';
 
@@ -223,6 +233,14 @@ define('working-aperture/components/welcome-page', ['exports', 'ember-welcome-pa
       return _welcomePage.default;
     }
   });
+});
+define('working-aperture/controllers/order-options', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.Controller.extend({});
 });
 define('working-aperture/controllers/recent-works', ['exports'], function (exports) {
   'use strict';
@@ -616,6 +634,17 @@ define('working-aperture/mirage/serializers/application', ['exports', 'ember-cli
   });
   exports.default = _emberCliMirage.JSONAPISerializer.extend({});
 });
+define('working-aperture/models/user', ['exports', 'ember-data'], function (exports, _emberData) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = _emberData.default.Model.extend({
+    name: _emberData.default.attr('string'),
+    email: _emberData.default.attr('string')
+  });
+});
 define('working-aperture/resolver', ['exports', 'ember-resolver'], function (exports, _emberResolver) {
   'use strict';
 
@@ -663,7 +692,15 @@ define('working-aperture/routes/order-options', ['exports'], function (exports) 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.Route.extend({});
+  exports.default = Ember.Route.extend({
+    model: function model() {
+      return this.store.findAll('user');
+
+      // return [{
+      //   user: user1
+      // }]
+    }
+  });
 });
 define('working-aperture/routes/recent-works', ['exports'], function (exports) {
   'use strict';
@@ -947,7 +984,7 @@ define("working-aperture/templates/order-options", ["exports"], function (export
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "ZRK5omVB", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[9,\"class\",\"container add-top add-extra-top\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"jumbo\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"right tomster\"],[7],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"text-center\"],[7],[0,\"\\n      \"],[6,\"h2\"],[7],[0,\"Order Options\"],[8],[0,\"\\n      \"],[6,\"p\"],[9,\"class\",\"section-subheading text-muted\"],[7],[0,\"\\n        Order Pictures. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur.\\n      \"],[8],[0,\"\\n      \"],[6,\"form\"],[9,\"action\",\"http://localhost:3002/users\"],[9,\"method\",\"post\"],[7],[0,\"\\n        \"],[6,\"label\"],[9,\"for\",\"name\"],[7],[0,\"Name\"],[8],[0,\"\\n        \"],[6,\"input\"],[9,\"type\",\"text\"],[9,\"name\",\"name\"],[7],[8],[0,\"\\n        \"],[6,\"label\"],[9,\"for\",\"email\"],[7],[0,\"Email\"],[8],[0,\"\\n        \"],[6,\"input\"],[9,\"type\",\"email\"],[9,\"name\",\"email\"],[7],[8],[0,\"\\n        \"],[6,\"input\"],[9,\"type\",\"submit\"],[7],[8],[0,\"\\n      \"],[8],[0,\"\\n    \"],[8],[0,\"\\n  \"],[8],[0,\"\\n  \"],[1,[18,\"outlet\"],false],[0,\"\\n\"],[8],[0,\"\\n\\n\"],[1,[18,\"site-footer\"],false],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "working-aperture/templates/order-options.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "BRl8AnJI", "block": "{\"symbols\":[\"user\"],\"statements\":[[6,\"div\"],[9,\"class\",\"container add-top add-extra-top\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"jumbo\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"right tomster\"],[7],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"text-center\"],[7],[0,\"\\n      \"],[6,\"h2\"],[7],[0,\"Order Options\"],[8],[0,\"\\n      \"],[6,\"p\"],[9,\"class\",\"section-subheading text-muted\"],[7],[0,\"\\n        Order Pictures. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur.\\n      \"],[8],[0,\"\\n      \"],[6,\"ul\"],[7],[0,\"\\n        test\\n        \"],[1,[20,[\"model\",\"email\"]],false],[0,\"\\n\"],[4,\"each\",[[20,[\"model\"]]],null,{\"statements\":[[0,\"          \"],[6,\"li\"],[7],[1,[19,1,[\"email\"]],false],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"      \"],[8],[0,\"\\n    \"],[8],[0,\"\\n  \"],[8],[0,\"\\n  \"],[1,[18,\"outlet\"],false],[0,\"\\n\"],[8],[0,\"\\n\\n\"],[1,[18,\"site-footer\"],false],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "working-aperture/templates/order-options.hbs" } });
 });
 define("working-aperture/templates/recent-works", ["exports"], function (exports) {
   "use strict";
@@ -1007,6 +1044,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("working-aperture/app")["default"].create({"name":"working-aperture","version":"0.0.0+f322ef4c"});
+  require("working-aperture/app")["default"].create({"name":"working-aperture","version":"0.0.0+0e7a70f4"});
 }
 //# sourceMappingURL=working-aperture.map
