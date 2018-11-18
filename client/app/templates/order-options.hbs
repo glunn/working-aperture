@@ -6,6 +6,11 @@
       <p class="section-subheading text-muted">
         Order Pictures. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur.
       </p>
+      <ul>
+        {{#each drafts key="id" as |draft|}}
+          <li>{{draft.title}}</li>
+        {{/each}}
+      </ul>
     </div>
   </div>
   {{outlet}}
