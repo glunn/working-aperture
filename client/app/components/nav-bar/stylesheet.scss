@@ -1,0 +1,53 @@
+.navbar {
+  padding: 0;
+  font-family: courier;
+  z-index: 49;
+  background-color: #ffffff;
+  .show {
+    height: 100%;
+  }
+  a {
+    height: 100%;
+    line-height: 1;
+    color: gray;
+    display: block;
+    vertical-align: left;
+  }
+  a.active, a:hover {
+    text-decoration: none;
+    color: black;
+  }
+  img {
+    margin-left: 6px;
+    width: 35px;
+  }
+  @media(max-width: $screen-sm-min) {
+    li {
+      height: 80px;
+    }
+    a {
+      text-align: left;
+      padding-left: 30px;
+      padding-top: 10px;
+    }
+  }
+  @media(min-width: $screen-sm) {
+    ul {
+      padding: 15px 15px 8px 15px;
+    }
+    .nav-link {
+      margin-right: 50px;
+    }
+    .col-xs-1 {
+      margin-left: 6px;
+    }
+    a {
+      text-align: center;
+    }
+  }
+}
+.navbar-toggler-icon {
+  margin-top: 15px;
+  margin-bottom: -5px;
+  font-size: 35px;
+}
