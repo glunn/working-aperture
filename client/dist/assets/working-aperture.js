@@ -156,6 +156,84 @@ define("working-aperture/components/nav-bar/template", ["exports"], function (ex
   });
   exports.default = Ember.HTMLBars.template({ "id": "iP2NVdiW", "block": "{\"symbols\":[],\"statements\":[[0,\"\\n\"],[6,\"nav\"],[9,\"class\",\"navbar navbar-expand-md fixed-top\"],[3,\"action\",[[19,0,[]],\"closeNavbar\"]],[7],[0,\"\\n  \"],[6,\"button\"],[9,\"aria-controls\",\"navbarSupportedContent\"],[9,\"aria-expanded\",\"false\"],[9,\"aria-label\",\"Toggle navigation\"],[9,\"class\",\"navbar-toggler\"],[9,\"data-target\",\"#navbarSupportedContent\"],[9,\"data-toggle\",\"collapse\"],[9,\"type\",\"button\"],[7],[0,\"\\n    \"],[6,\"span\"],[9,\"class\",\"navbar-toggler-icon\"],[7],[0,\"☰\"],[8],[0,\"\\n  \"],[8],[0,\"\\n\\n  \"],[6,\"div\"],[9,\"class\",\"collapse navbar-collapse\"],[9,\"id\",\"navbarSupportedContent\"],[7],[0,\"\\n    \"],[6,\"ul\"],[9,\"class\",\"navbar-nav ml-auto\"],[7],[0,\"\\n      \"],[6,\"li\"],[9,\"class\",\"nav-item nav-link\"],[7],[0,\"\\n        \"],[6,\"span\"],[9,\"class\",\"logo\"],[7],[0,\"\\n\"],[4,\"link-to\",[\"index\"],null,{\"statements\":[[0,\"          \"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n            \"],[6,\"div\"],[9,\"class\",\"col-xs-1\"],[7],[0,\"\\n              \"],[6,\"img\"],[9,\"alt\",\"Working Aperture Logo\"],[9,\"src\",\"/img/working-aperture.png\"],[7],[8],[0,\"\\n            \"],[8],[0,\"\\n            \"],[6,\"div\"],[9,\"class\",\"col-xs-1\"],[7],[0,\"\\n              Working\"],[6,\"br\"],[7],[8],[0,\"Aperture\\n            \"],[8],[0,\"\\n          \"],[8],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"        \"],[8],[0,\"\\n      \"],[8],[0,\"\\n      \"],[6,\"li\"],[9,\"class\",\"nav-item nav-link\"],[7],[0,\"\\n\"],[4,\"link-to\",[\"what-sets-us-apart\"],[[\"class\"],[\"button\"]],{\"statements\":[[0,\"            What sets\"],[6,\"br\"],[7],[8],[0,\"\\n            us apart\\n\"]],\"parameters\":[]},null],[0,\"      \"],[8],[0,\"\\n      \"],[6,\"li\"],[9,\"class\",\"nav-item nav-link\"],[7],[0,\"\\n\"],[4,\"link-to\",[\"order-options\"],[[\"class\"],[\"button\"]],{\"statements\":[[0,\"          Order\"],[6,\"br\"],[7],[8],[0,\"\\n          Options\\n\"]],\"parameters\":[]},null],[0,\"      \"],[8],[0,\"\\n      \"],[6,\"li\"],[9,\"class\",\"nav-item nav-link\"],[7],[0,\"\\n\"],[4,\"link-to\",[\"recent-works\"],[[\"class\"],[\"button\"]],{\"statements\":[[0,\"          Recent\"],[6,\"br\"],[7],[8],[0,\"\\n          Works\\n\"]],\"parameters\":[]},null],[0,\"      \"],[8],[0,\"\\n    \"],[8],[0,\"\\n  \"],[8],[0,\"\\n\"],[8]],\"hasEval\":false}", "meta": { "moduleName": "working-aperture/components/nav-bar/template.hbs" } });
 });
+define('working-aperture/components/order-form/component', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  function _asyncToGenerator(fn) {
+    return function () {
+      var gen = fn.apply(this, arguments);
+      return new Promise(function (resolve, reject) {
+        function step(key, arg) {
+          try {
+            var info = gen[key](arg);
+            var value = info.value;
+          } catch (error) {
+            reject(error);
+            return;
+          }
+
+          if (info.done) {
+            resolve(value);
+          } else {
+            return Promise.resolve(value).then(function (value) {
+              step("next", value);
+            }, function (err) {
+              step("throw", err);
+            });
+          }
+        }
+
+        return step("next");
+      });
+    };
+  }
+
+  exports.default = Ember.Component.extend({
+    model: function model() {
+      return this.store.createRecord('thing');
+    },
+
+    actions: {
+      createUser: function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+          var user;
+          return regeneratorRuntime.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  user = Ember.get(this, 'user');
+                  _context.next = 3;
+                  return user.save();
+
+                case 3:
+                case 'end':
+                  return _context.stop();
+              }
+            }
+          }, _callee, this);
+        }));
+
+        function createUser() {
+          return _ref.apply(this, arguments);
+        }
+
+        return createUser;
+      }()
+    }
+  });
+});
+define("working-aperture/components/order-form/template", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "i0pkbmIL", "block": "{\"symbols\":[\"user\"],\"statements\":[[6,\"ul\"],[7],[0,\"\\n  \"],[1,[20,[\"model\",\"email\"]],false],[0,\"\\n\"],[4,\"each\",[[20,[\"model\"]]],null,{\"statements\":[[0,\"    \"],[6,\"li\"],[7],[1,[19,1,[\"email\"]],false],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[8],[0,\"\\n\"],[6,\"div\"],[7],[0,\"\\n  \"],[1,[25,\"input\",null,[[\"value\",\"placeholder\"],[[20,[\"model\",\"name\"]],\"Name\"]]],false],[0,\"\\n  \"],[1,[25,\"input\",null,[[\"value\",\"placeholder\"],[[20,[\"model\",\"email\"]],\"Email\"]]],false],[0,\"\\n  \"],[6,\"button\"],[3,\"action\",[[19,0,[]],\"createUser\"]],[7],[0,\"Submit\"],[8],[0,\"\\n\"],[8]],\"hasEval\":false}", "meta": { "moduleName": "working-aperture/components/order-form/template.hbs" } });
+});
 define('working-aperture/components/parallax-content', ['exports', 'ember-parallax/components/parallax-content'], function (exports, _parallaxContent) {
   'use strict';
 
@@ -984,7 +1062,7 @@ define("working-aperture/templates/order-options", ["exports"], function (export
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "BRl8AnJI", "block": "{\"symbols\":[\"user\"],\"statements\":[[6,\"div\"],[9,\"class\",\"container add-top add-extra-top\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"jumbo\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"right tomster\"],[7],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"text-center\"],[7],[0,\"\\n      \"],[6,\"h2\"],[7],[0,\"Order Options\"],[8],[0,\"\\n      \"],[6,\"p\"],[9,\"class\",\"section-subheading text-muted\"],[7],[0,\"\\n        Order Pictures. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur.\\n      \"],[8],[0,\"\\n      \"],[6,\"ul\"],[7],[0,\"\\n        test\\n        \"],[1,[20,[\"model\",\"email\"]],false],[0,\"\\n\"],[4,\"each\",[[20,[\"model\"]]],null,{\"statements\":[[0,\"          \"],[6,\"li\"],[7],[1,[19,1,[\"email\"]],false],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"      \"],[8],[0,\"\\n    \"],[8],[0,\"\\n  \"],[8],[0,\"\\n  \"],[1,[18,\"outlet\"],false],[0,\"\\n\"],[8],[0,\"\\n\\n\"],[1,[18,\"site-footer\"],false],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "working-aperture/templates/order-options.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "oYEo2Fku", "block": "{\"symbols\":[\"user\"],\"statements\":[[6,\"div\"],[9,\"class\",\"container add-top add-extra-top\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"jumbo\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"right tomster\"],[7],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"text-center\"],[7],[0,\"\\n      \"],[6,\"h2\"],[7],[0,\"Order Options\"],[8],[0,\"\\n      \"],[6,\"p\"],[9,\"class\",\"section-subheading text-muted\"],[7],[0,\"\\n        Order Pictures. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur.\\n      \"],[8],[0,\"\\n    \"],[8],[0,\"\\n    \"],[6,\"ul\"],[7],[0,\"\\n      test\\n      \"],[1,[20,[\"model\",\"email\"]],false],[0,\"\\n\"],[4,\"each\",[[20,[\"model\"]]],null,{\"statements\":[[0,\"        \"],[6,\"li\"],[7],[1,[19,1,[\"email\"]],false],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"    \"],[8],[0,\"\\n    \"],[1,[25,\"order-form\",null,[[\"model\"],[[20,[\"model\"]]]]],false],[0,\"\\n  \"],[8],[0,\"\\n  \"],[1,[18,\"outlet\"],false],[0,\"\\n\"],[8],[0,\"\\n\\n\"],[1,[18,\"site-footer\"],false],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "working-aperture/templates/order-options.hbs" } });
 });
 define("working-aperture/templates/recent-works", ["exports"], function (exports) {
   "use strict";
@@ -1044,6 +1122,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("working-aperture/app")["default"].create({"name":"working-aperture","version":"0.0.0+0e7a70f4"});
+  require("working-aperture/app")["default"].create({"name":"working-aperture","version":"0.0.0+2e4a7615"});
 }
 //# sourceMappingURL=working-aperture.map
