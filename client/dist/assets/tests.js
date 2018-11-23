@@ -20,6 +20,11 @@ define('working-aperture/tests/app.lint-test', [], function () {
     assert.ok(false, 'components/nav-bar/component.js should pass ESLint\n\n2:8 - \'$\' is defined but never used. (no-unused-vars)');
   });
 
+  QUnit.test('components/order-form/component.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/order-form/component.js should pass ESLint\n\n');
+  });
+
   QUnit.test('components/portfolio-projects/component.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'components/portfolio-projects/component.js should pass ESLint\n\n');
@@ -167,6 +172,35 @@ define('working-aperture/tests/integration/components/nav-bar-test', ['ember-qun
     assert.equal(this.$().text().trim(), 'template block text');
   });
 });
+define('working-aperture/tests/integration/components/order-form-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleForComponent)('order-options', 'Integration | Component | order options', {
+    integration: true
+  });
+
+  (0, _emberQunit.test)('it renders', function (assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
+
+    this.render(Ember.HTMLBars.template({
+      "id": "nz9TTvc7",
+      "block": "{\"symbols\":[],\"statements\":[[1,[18,\"order-options\"],false]],\"hasEval\":false}",
+      "meta": {}
+    }));
+
+    assert.equal(this.$().text().trim(), '');
+
+    // Template block usage:
+    this.render(Ember.HTMLBars.template({
+      "id": "XmxFYgXL",
+      "block": "{\"symbols\":[],\"statements\":[[0,\"\\n\"],[4,\"order-options\",null,null,{\"statements\":[[0,\"      template block text\\n\"]],\"parameters\":[]},null],[0,\"  \"]],\"hasEval\":false}",
+      "meta": {}
+    }));
+
+    assert.equal(this.$().text().trim(), 'template block text');
+  });
+});
 // import { moduleForComponent, test } from 'ember-qunit';
 // import hbs from 'htmlbars-inline-precompile';
 
@@ -253,6 +287,11 @@ define('working-aperture/tests/tests.lint-test', [], function () {
   QUnit.test('integration/components/nav-bar-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'integration/components/nav-bar-test.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('integration/components/order-form-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'integration/components/order-form-test.js should pass ESLint\n\n');
   });
 
   QUnit.test('integration/components/portfolio-projects-test.js', function (assert) {

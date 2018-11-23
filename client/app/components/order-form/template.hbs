@@ -1,0 +1,11 @@
+<ul>
+  {{model.email}}
+  {{#each model as |user|}}
+    <li>{{user.email}}</li>
+  {{/each}}
+</ul>
+<div>
+  {{input value=model.name placeholder="Name"}}
+  {{input value=model.email placeholder="Email"}}
+  <button {{action 'createUser'}}>Submit</button>
+</div>
